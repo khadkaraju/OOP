@@ -1,0 +1,38 @@
+
+class Shape {
+  double calculateArea() {
+    System.out.println("calculating in a dummy shape");
+    return 0.0;
+  }
+}
+
+class Rectangle extends Shape {
+  @Override
+  double calculateArea() {
+    System.out.println("calculating in a rect");
+    return 1.1;
+  }
+}
+
+class Circle extends Shape {
+  @Override
+  double calculateArea() {
+    System.out.println("calculating in a circle");
+    return 2.2;
+  }
+}
+
+public class Test {
+  static void doSth(Shape s) {
+    s.calculateArea();
+  }
+
+  public static void main(String[] args) {
+    Shape s = new Shape();
+    Circle c = new Circle();
+    Rectangle r = new Rectangle();
+    doSth(s);
+    doSth(c);
+    doSth(r);
+  }
+}
