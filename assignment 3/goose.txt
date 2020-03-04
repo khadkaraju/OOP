@@ -1,0 +1,49 @@
+interface CanFly {
+  void fly();
+}
+
+interface CanRun {
+  void run();
+}
+
+class Dove implements CanFly {
+  public void fly() {
+    System.out.println("dove flies");
+  }
+}
+
+public class Goose implements CanFly, CanRun {
+  public void fly() {
+    System.out.println("goose flies");
+  }
+  
+  public void run() {
+    System.out.println("goose runs");
+  }
+
+  public static void main(String[] args) {
+    Goose g = new Goose();
+    Dove d = new Dove();
+    CanFly x = g;
+    x.fly();
+    x = d;
+    x.fly();
+    
+    CanRun y = g;
+    y.run();
+    // y = d; // ????
+  }
+}
+
+
+/*
+public class Idea implements Methods {
+  @Override
+  public String getName() {
+    return "dummy";
+  }
+  public static void main(String[] args) {
+    Idea id = new Idea();
+  }
+}
+*/
